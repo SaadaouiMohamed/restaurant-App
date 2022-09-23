@@ -1,0 +1,8 @@
+
+i{
+    @apply mt-4 text-2xl text-white mr-2
+}
+
+.socialMediaIcons{
+    @apply grid grid-cols-3 w-1/2 mx-auto text-center px-3
+}
