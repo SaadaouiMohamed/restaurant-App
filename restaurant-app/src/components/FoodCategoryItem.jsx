@@ -1,17 +1,18 @@
 import React from "react";
 
-export default function FoodCategoryItem() {
+export default function FoodCategoryItem({el}) {
+
+
   return (
-    <div>
-      <h1>Our Menu</h1>
-      <div className="text-center bg-gray-300" key={i}>
+   
+      
+      <div className="text-center bg-gray-100 rounded-[5px] p-4 shadow-2xl">
         <img
           src={el.strCategoryThumb}
           alt={el.strCategory}
-          className="rounded-full"
-        />
-        <p className="mt-3 py-3">{el.strCategory}</p>
+          className="rounded-full max-w-[90%]"/>
+        <p className="mt-3 py-3 font-bold">{el.strCategory}</p>
       </div>
-    </div>
+    
   );
 }

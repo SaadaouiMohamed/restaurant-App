@@ -6,3 +6,27 @@ i{
 .socialMediaIcons{
     @apply grid grid-cols-3 w-1/2 mx-auto text-center px-3
 }
+
+.slide {
+    @apply hidden 
+  }
+  
+  .slide.active {
+    @apply block visible relative w-[50%] mx-auto
+  }
+
+
+  .image {
+    @apply w-[100%] h-[600px] rounded-[10px]
+  }
+
+
+  .btnSlide{
+    @apply  absolute top-[50%] text-3xl opacity-0
+  }
+
+  .btnSlide:hover{
+    @apply opacity-100 cursor-pointer transition-transform	
+  }
+
+  
