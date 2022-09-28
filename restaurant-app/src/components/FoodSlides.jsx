@@ -3,13 +3,16 @@ import {
   FaRegArrowAltCircleLeft,
   FaRegArrowAltCircleRight,
 } from "react-icons/fa";
+import { useMeals } from "../context/MealsContext";
 
-export default function FoodSlides({ meals }) {
+export default function FoodSlides() {
   const [current, setCurrent] = useState(0);
 
+  const {Meals} = useMeals()
+
   const slides = useMemo(
-    () => [...new Set(meals.map(({ strMealThumb }) => strMealThumb))],
-    [meals]
+    () => [...new Set(Meals.map(({ strMealThumb }) => strMealThumb))],
+    [Meals]
   );
 
   const size = slides.length;
@@ -34,7 +37,7 @@ export default function FoodSlides({ meals }) {
     return () => {
       clearInterval(internval);
     };
-  }, [meals]);
+  }, [Meals]);
 
   return (
     <div className="mt-10 w-[90%] mx-auto ">

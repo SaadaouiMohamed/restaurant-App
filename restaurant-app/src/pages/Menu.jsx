@@ -3,13 +3,13 @@ import axios from "axios";
 import FoodCategoryItem from "../components/FoodCategoryItem";
 
 export default function Menu() {
-  const [categories, setCategorie] = useState([]);
+  const [categories, setCategories] = useState([]);
 
   useEffect(() => {
     getCategories();
     async function getCategories() {
       axios.get("http://localhost:5050/categories").then((res) => {
-        setCategorie(res.data);
+        setCategories(res.data);
       });
     }
     
@@ -23,9 +23,11 @@ export default function Menu() {
     <ul className="grid grid-cols-4 gap-x-5 gap-y-5">
     {
         categories.map((el , i) => (
+          <a href={`/categoryFood${el.idCategory}`}>
           <li key={i}>
           <FoodCategoryItem {...{el}}/>
           </li>
+          </a>
         ))
     }
     </ul>

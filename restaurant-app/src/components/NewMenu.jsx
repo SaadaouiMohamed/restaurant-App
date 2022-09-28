@@ -1,11 +1,16 @@
 import React from "react";
 import { HiArrowNarrowRight } from "react-icons/hi";
+import { useMeals } from "../context/MealsContext";
 
-export default function NewMenu({ newMenu }) {
+export default function NewMenu() {
+
+  const {newMenu} = useMeals()
+
+
   return (
     <div className="text-center mt-10 p-4">
       <h1 className="text-3xl font-medium text-[#5f5e4e]">New in Menu</h1>
-      <section className="grid grid-cols-4 gap-3 w-[80%] mx-auto my-20">
+      <section className="lg:grid lg:grid-cols-4 lg:gap-3 lg:w-[80%] mx-auto my-20 grid grid-cols-1 w-1/2 gap-10">
         {newMenu.map((elem, i) => (
           <article key={i} className="text-center bg-[#f6f7ea] p-5 pb-10">
             <img

@@ -12,12 +12,12 @@ i{
   }
   
   .slide.active {
-    @apply block visible relative w-[50%] mx-auto
+    @apply block visible relative w-[50%] mx-auto 
   }
 
 
   .image {
-    @apply w-[100%] h-[600px] rounded-[10px]
+    @apply lg:w-[100%] lg:h-[600px] rounded-[10px] w-full
   }
 
 
@@ -29,4 +29,10 @@ i{
     @apply opacity-100 cursor-pointer transition-transform	
   }
 
-  
+  nav a{
+    @apply text-[#646352] text-[20px] font-medium mt-4 lg:mt-1
+  }
+
+  nav a:hover{
+    @apply text-white
+  }

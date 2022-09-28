@@ -3,10 +3,13 @@ import FoodSlides from "../components/FoodSlides";
 import axios from "axios";
 
 import NewMenu from "../components/NewMenu";
+import MealsContextProvider from "../context/MealsContext";
 export default function Home() {
-  const [meals, setMeals] = useState([]);
 
-  const newMenu = meals.slice(0, 4);
+  
+  const [Meals, setMeals] = useState([]);
+
+  const newMenu = Meals.slice(0, 4);
 
   useEffect(() => {
     getFoodImages();
@@ -17,12 +20,14 @@ export default function Home() {
     }
   }, []);
 
-  if (!meals.length) return null;
+  if (!Meals.length) return null;
 
   return (
+    <MealsContextProvider value={{Meals , setMeals , newMenu}}>
     <div>
-      <FoodSlides {...{ meals }} />
-      <NewMenu {...{newMenu}}/>
+      <FoodSlides/>
+      <NewMenu />
     </div>
+    </MealsContextProvider>
   );
 }
