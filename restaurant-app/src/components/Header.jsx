@@ -23,7 +23,7 @@ export default function Header() {
 
 
   return (
-    <div className="bg-[#d7d7b1] text-center ">
+    <div className="bg-[#d7d7b1] text-center relative">
       <div className="w-[50%] mx-auto py-4">
         <img src={logo} alt="restaurant logo" className="mx-auto" />
       </div>
@@ -44,9 +44,11 @@ export default function Header() {
         </nav>
       )}
       {!isMd && (
-        <button onClick={handleOpen}>
+        <div className='absolute right-2 top-0'>
+        <button onClick={handleOpen} >
           <HiOutlineMenu className="text-[50px]" />
         </button>
+        </div>
       )}
       {
        !isMd && open && <NavBarSide />

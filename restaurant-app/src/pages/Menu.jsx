@@ -20,7 +20,7 @@ export default function Menu() {
   return (
   <div className="p-4 mx-8">
     <h1 className="text-center text-3xl my-5 ">Our Menu</h1>
-    <ul className="grid grid-cols-4 gap-x-5 gap-y-5">
+    <ul className=" grid grid-cols-1 gap-x-5 gap-y-5 w-full lg:grid lg:grid-cols-4 lg:gap-x-5 lg:gap-y-5 md:grid md:grid-cols-2 md:gap-x-5 md:gap-y-5">
     {
         categories.map((el , i) => (
           <a href={`/categoryFood${el.idCategory}`}>
